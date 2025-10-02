@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="/css/style_autentificare.css"> 
+<div class="pagina-autentificare-container"> 
+    <div class="container-formular">
+        
+        <% if (mesajEroare) { %>
+            <p class="mesaj-eroare"><%= mesajEroare %></p>
+        <% } %>
+        
+        <form action="/verificare-autentificare" method="POST">
+            <div class="camp-formular">
+                <label for="utilizator">Utilizator:</label>
+                <input type="text" id="utilizator" name="utilizator" required>
+            </div>
+            <div class="camp-formular">
+                <label for="parola">Parolă:</label>
+                <input type="password" id="parola" name="parola" required>
+            </div>
+            <button type="submit" class="buton-autentificare">Autentificare</button>
+        </form>
+        <a href="/" class="link-inapoi">Înapoi la pagina principală</a>
+    </div>
+</div>

@@ -1,0 +1,76 @@
+{
+    "retro": [
+      {
+        "intrebare": "Cum preferi carcasa televizorului?",
+        "variante": [
+          { "text": "Lemn masiv sau imitație lemn", "scor": { "retro": 1, "modern": 0 } },
+          { "text": "Plastic simplu, design minimalist", "scor": { "retro": 0, "modern": 0 } }
+        ]
+      },
+      {
+        "intrebare": "Cât de important e sunetul mono sau stereo clasic, specific epocii?",
+        "variante": [
+          { "text": "Foarte important, are un farmec aparte", "scor": { "retro": 1, "modern": 0 } },
+          { "text": "Nu contează prea mult, prefer claritatea modernă", "scor": { "retro": 0, "modern": 0 } }
+        ]
+      },
+      {
+        "intrebare": "Ce tipuri de dispozitive intenționezi să conectezi cel mai des?",
+        "variante": [
+          { "text": "Console vechi, VCR (prin SCART/RCA), antenă clasică", "scor": { "retro": 1, "modern": 0 } },
+          { "text": "Console noi, Blu-ray, laptop (prin HDMI), streaming", "scor": { "retro": 0, "modern": 1 } }
+        ]
+      },
+      {
+        "intrebare": "Cum apreciezi experiența pornirii televizorului?",
+        "variante": [
+          { "text": "Îmi place ritualul butonului fizic, poate chiar un mic \"bazâit\"", "scor": { "retro": 1, "modern": 0 } },
+          { "text": "Prefer să pornească instant și silențios", "scor": { "retro": 0, "modern": 0 } }
+        ]
+      },
+      {
+        "intrebare": "Principalul motiv pentru a alege un astfel de TV ar fi:",
+        "variante": [
+          { "text": "Atmosfera nostalgică, aspectul vintage ca piesă de decor", "scor": { "retro": 1, "modern": 0 } },
+          { "text": "Funcționalitatea de bază, fără complicații moderne", "scor": { "retro": 0, "modern": 0 } }
+        ]
+      }
+    ],
+    "moderne": [
+      {
+        "intrebare": "Ce funcționalitate Smart consideri indispensabilă?",
+        "variante": [
+          { "text": "Acces la aplicații (Netflix, YouTube, browser etc.)", "scor": { "retro": 0, "modern": 1 } },
+          { "text": "Nu am nevoie de funcții Smart, îl voi folosi doar ca monitor/TV clasic", "scor": { "retro": 0, "modern": 0 } }
+        ]
+      },
+      {
+        "intrebare": "Ce nivel de detaliu al imaginii (rezoluție) cauți?",
+        "variante": [
+          { "text": "4K sau chiar 8K pentru cea mai bună claritate posibilă", "scor": { "retro": 0, "modern": 1 } },
+          { "text": "Full HD (1080p) este suficient pentru mine", "scor": { "retro": 0, "modern": 0 } }
+        ]
+      },
+      {
+        "intrebare": "Ce tehnologie de ecran te atrage cel mai mult?",
+        "variante": [
+          { "text": "OLED/QLED/Mini-LED pentru contrast superior și culori intense", "scor": { "retro": 0, "modern": 1 } },
+          { "text": "Un panou LED standard, echilibrat ca preț și performanță", "scor": { "retro": 0, "modern": 0 } }
+        ]
+      },
+      {
+        "intrebare": "Cum preferi să interacționezi cu televizorul?",
+        "variante": [
+          { "text": "Telecomandă modernă, eventual cu microfon pentru comenzi vocale", "scor": { "retro": 0, "modern": 1 } },
+          { "text": "O telecomandă simplă, cu butoane fizice clare", "scor": { "retro": 0, "modern": 0 } } 
+        ]
+      },
+      {
+        "intrebare": "Cât de importantă este conectivitatea wireless avansată (WiFi 6, Bluetooth 5+)?",
+        "variante": [
+          { "text": "Esențială pentru streaming fluid și conectarea altor dispozitive", "scor": { "retro": 0, "modern": 1 } },
+          { "text": "Conectivitatea de bază este suficientă / Nu este o prioritate", "scor": { "retro": 0, "modern": 0 } }
+        ]
+      }
+    ]
+  }

@@ -1,0 +1,51 @@
+<%# views/rezultat.ejs %>
+
+<h1><%= titlu %></h1>
+<link rel="stylesheet" href="/css/style_rezultat.css">
+<p>Mulțumim că ai completat chestionarul! Iată rezultatele tale:</p>
+<div class="rezultat-container">
+    <p class="scor-final"></p>
+
+    <div class="mesaj-scor recomandare">
+        <% if (tip === 'retro') { %>
+            <strong>Preferințele tale indică un stil retro autentic.</strong><br>
+            Îți recomandăm un televizor restaurat sau de colecție care păstrează farmecul decadelor trecute:
+            <ul>
+                <li><strong>Philips K12</strong> – model clasic cu carcasă din lemn</li>
+                <li><strong>Grundig Super Color</strong> – culori vii și design specific anilor ’80</li>
+                <li><strong>Sony Trinitron</strong> – calitate de top pentru vremea sa</li>
+            </ul>
+        <% } else if (tip === 'modern') { %>
+            <strong>Ești atras de tehnologie și funcții smart moderne.</strong><br>
+            Iată câteva opțiuni excelente care oferă imagine de ultimă generație:
+            <ul>
+                <li><strong>LG OLED C3</strong> – contrast perfect și negru profund</li>
+                <li><strong>Samsung QLED QN90C</strong> – culori intense și luminozitate puternică</li>
+                <li><strong>Sony Bravia XR A95L</strong> – sunet integrat în ecran și inteligență artificială</li>
+            </ul>
+        <% } else if (tip === 'mix') { %>
+            <strong>Ai gusturi echilibrate între estetică retro și tehnologie modernă.</strong><br>
+            Îți recomandăm televizoare cu aspect vintage, dar dotări de top:
+            <ul>
+                <li><strong>Samsung The Frame</strong> – televizor care arată ca un tablou</li>
+                <li><strong>Loewe Bild i</strong> – design minimalist, calitate germană</li>
+                <li><strong>LG Objet Collection</strong> – stil rafinat cu sunet integrat frontal</li>
+            </ul>
+        <% } else { %>
+            <strong>Preferințele tale nu sunt foarte clare, dar iată câteva recomandări versatile:</strong>
+            <ul>
+                <li><strong>TCL C845</strong> – televizor 4K cu Mini LED și preț accesibil</li>
+                <li><strong>Panasonic LZ2000</strong> – imagine fidelă, potrivit pentru cinefili</li>
+                <li><strong>Hisense U8KQ</strong> – performanță bună și funcții smart variate</li>
+            </ul>
+        <% } %>
+    </div>
+
+    <div class="actiuni-rezultat">
+        <a href="/chestionar/<%= tip %>" class="btn-retry">Refă chestionarul <%= tip %></a>
+        <a href="/" class="btn-home">Înapoi la pagina principală</a>
+    </div>
+</div>
+
+
+  

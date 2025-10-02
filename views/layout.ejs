@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= typeof titlu !== 'undefined' ? titlu : 'Nou&Vechi' %></title>
+    <link rel="stylesheet" href="/css/style_layout.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style_admin.css">
+    
+</head>
+
+<body>
+   <header class="site-header">  
+        <a href="/" class="logo-link">
+            <img src="/images/logo.png" alt="Nou&Vechi Logo" class="site-logo-img">
+        </a>
+
+        <div class="header-actions">
+            <% if (session.utilizator) { %>
+                <span class="welcome-msg">Salut, <%= session.utilizator.utilizator %>!</span>
+                <a href="/delogare" class="auth-link logout">Delogare</a>
+            <% } else { %>
+                <a href="/autentificare" class="auth-link">Autentificare</a>
+            <% } %>
+
+            <div class="nav-item-container">
+                <a href="#" class="nav-link">Chestionar</a>
+                <div class="nav-dropdown">
+                    <a href="/chestionar/retro">Televizoare Retro</a>
+                    <a href="/chestionar/moderne">Televizoare Moderne</a>
+                </div>
+            </div>
+         
+            <div class="cos-container">
+                <button class="cos-button">🛒 Coș (<%= session.cos ? session.cos.length : 0 %>)</button>
+                <div class="cos-dropdown" id="cosDropdown">
+                    <% 
+                        let totalCos = 0;
+                        if (session.cos && session.cos.length > 0) {
+                            session.cos.forEach(p => {
+                                totalCos += p.pret;
+                            });
+                        }
+                    %>
+
+                    <% if (session.cos && session.cos.length > 0) { %>
+                        <ul class="lista-produse-cos">
+                            <% session.cos.forEach(p => { %>
+                                <li class="item-produs-cos">
+                                    <% if (p.imagine && p.imagine.trim() !== "") { %>
+                                        <img src="<%= p.imagine %>" alt="Imagine <%= p.nume %>" class="imagine-produs-cos">
+                                    <% } else { %>
+                                        <div class="imagine-produs-cos placeholder-cos">?</div>
+                                    <% } %>
+                                    <div class="detalii-produs-cos">
+                                        <span class="nume-produs-cos"><%= p.nume %></span>
+                                        <span class="pret-produs-cos"><%= p.pret.toFixed(2) %> RON</span>
+                                    </div>
+                                </li>
+                            <% }) %>
+                        </ul>
+                        <div class="rezumat-cos">
+                            <hr class="separator-cos">
+                            <div class="total-cos-container">
+                                <span class="label-total-cos">Total:</span>
+                                <span class="valoare-total-cos"><%= totalCos.toFixed(2) %> RON</span>
+                            </div>
+                            <button class="btn-plaseaza-comanda" onclick="plaseazaComanda()">Plasează comanda</button>
+                        </div>
+                    <% } else { %>
+                        <p style="text-align: center; padding: 10px 0;">Coșul este gol.</p>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </header> 
+
+    <main class="main-content-index"> 
+        <%- body %>
+    </main>
+
+    <footer>
+        <p>© <%= new Date().getFullYear() %> Nou&Vechi. Toate drepturile rezervate.</p>
+    </footer>
+
+    <script>
+        function plaseazaComanda() {
+            alert("Veți fi contactat în cel mai scurt timp pentru confirmarea și plasarea comenzii!");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<div class="main-content-index">
+
+    <% if (session.utilizator && session.utilizator.rol === 'ADMIN') { %>
+        <div class="admin-buttons-container">
+            <form action="/creare-bd" method="POST" style="display: inline-block; margin: 5px;">
+                <button type="submit" class="admin-button">Pregătire BD</button>
+            </form>
+            <form action="/inserarebd" method="GET" style="display: inline-block; margin: 5px;">
+                <button type="submit" class="admin-button">Inserare produse demo</button>
+            </form>
+            <form action="/incarcare-bd" method="GET" style="display: inline-block; margin: 5px;">
+                <button type="submit" class="admin-button">Afișează produse listate</button>
+            </form>
+            <a href="/admin" class="admin-button" style="text-decoration: none; display: inline-block; margin: 5px; vertical-align: top;">
+                Adaugă produs manual
+            </a>
+        </div>
+    <% } %>
+
+    <% if (typeof afiseazaProduse !== 'undefined' && afiseazaProduse) { %>
+        <div class="produse-wrapper">
+            <h3 class="section-title">Produse disponibile:</h3>
+            <% if (produse && produse.length > 0) { %>
+                <div class="grid-produse">
+                    <% produse.forEach(function(p) { %>
+                        <div class="card-produs">
+                            <div class="card-imagine-container">
+                                <% if (p.imagine && p.imagine.trim() !== "") { %>
+                                    <img src="<%= p.imagine %>" alt="Imagine <%= p.nume %>" class="imagine-produs">
+                                <% } else { %>
+                                    <div class="imagine-indisponibila">Imagine indisponibilă</div>
+                                <% } %>
+                            </div>
+                            <div class="card-continut">
+                                <h4 class="nume-produs"><%= p.nume %></h4>
+                                <p class="pret-produs"><%= p.pret.toFixed(2) %> RON</p>
+                                
+                                <div class="specificatii-hover">
+                                    <% if (p.specificatii) { %>
+                                        <h5>Specificații:</h5>
+                                        <% if (Array.isArray(p.specificatii)) { %>
+                                            <ul>
+                                                <% p.specificatii.forEach(function(spec) { %>
+                                                    <li><%= spec %></li>
+                                                <% }); %>
+                                            </ul>
+                                        <% } else { %>
+                                            <p><%= p.specificatii %></p>
+                                        <% } %>
+                                    <% } else { %>
+                                        <p>Nicio specificație disponibilă.</p>
+                                    <% } %>
+                                </div>
+
+                                <% if (session && session.utilizator) { %>
+                                    <form action="/adaugare_cos" method="POST" class="form-adaugare-cos">
+                                        <input type="hidden" name="id" value="<%= p._id %>">
+                                        <button type="submit" class="btn-adauga-cos">Adaugă în coș</button>
+                                    </form>
+                                <% } else { %>
+                                   <div class="form-adaugare-cos">
+        <p class="login-reminder">
+            <a href="/autentificare?returnTo=<%= encodeURIComponent(locals.originalUrl || '/incarcare-bd') %>" class="auth-link">Autentifică-te</a> pentru a cumpăra.
+        </p>
+    </div>
+                                <% } %>
+                            </div>
+                        </div>
+                    <% }) %>
+                </div>
+            <% } else { %>
+                <p style="text-align: center; margin-top: 20px; color: #aaa;">
+                    Momentan nu sunt produse disponibile în magazin.
+                    <% if (session.utilizator && session.utilizator.rol === 'ADMIN') { %>
+                        <br>Puteți încerca să <a href="/inserarebd" style="color: #D4AF37; text-decoration: underline;">inserați produse</a>.
+                    <% } %>
+                </p>
+            <% } %>
+        </div>
+    <% } else { %>
+        <div class="pagina-start-container">
+            <h2 class="titlu-start">Bun venit la Nou&Vechi!</h2>
+            <p class="text-start">Explorează colecția noastră unică de televizoare!</p>
+            <form action="/incarcare-bd" method="GET" style="display: inline-block; margin-top: 20px;">
+                <button type="submit" class="btn-vezi-produse">Vezi Produsele Noastre</button>
+            </form>
+        </div>
+    <% } %>
+    
+    <% if (session.mesaj) { %>
+        <div class="alert-general" style="margin: 30px auto; padding: 15px; background-color: rgba(212, 175, 55, 0.15); color: #D4AF37; border: 1px solid rgba(212, 175, 55, 0.4); border-radius: 4px; text-align:center; max-width: 700px; font-weight: 500;">
+            <%= session.mesaj %>
+        </div>
+        <% session.mesaj = null; %>
+    <% } %>
+</div>

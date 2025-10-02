@@ -1,0 +1,17 @@
+<%- include('partials/header', { titlu: titlu }) %>
+
+<h2>Coșul meu de cumpărături</h2>
+
+<% if (produse.length === 0) { %>
+    <p>Coșul tău este gol.</p>
+<% } else { %>
+    <ul>
+        <% produse.forEach(produs => { %>
+            <li>
+                <strong><%= produs.nume %></strong> - <%= produs.pret %> RON
+            </li>
+        <% }); %>
+    </ul>
+<% } %>
+
+<%- include('partials/footer') %>

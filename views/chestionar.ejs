@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <%# Adăugat pentru responsive design %>
+    <title><%= typeof titlu !== 'undefined' ? titlu : 'Chestionar TV' %></title>
+    <link rel="stylesheet" href="/css/style_chestionar.css"> 
+</head>
+<body class="<%= typeof tema !== 'undefined' ? tema : '' %>">
+    <div class="chestionar-wrapper">
+        <h1><%= typeof titlu !== 'undefined' ? titlu : 'Chestionar TV' %></h1>
+        <p class="intro">Răspundeți la întrebările de mai jos pentru a descoperi ce tip de televizor vi se potrivește.</p>
+
+        <% if (typeof intrebari !== 'undefined' && intrebari.length > 0) { %>
+            <form method="POST" action="/rezultat-chestionar" class="chestionar-form">
+                <input type="hidden" name="tip_chestionar" value="<%= tip %>">
+
+                <% intrebari.forEach(function(elementIntrebare, indexIntrebare) { %>
+                    <fieldset class="intrebare-bloc">
+                        <legend class="intrebare-text">
+                            <%= indexIntrebare + 1 %>. <%= elementIntrebare.intrebare %>
+                        </legend>
+
+                        <% if (elementIntrebare.variante && elementIntrebare.variante.length > 0) { %>
+                            <% elementIntrebare.variante.forEach(function(variantaObiect, indexVarianta) { %>
+                                <div class="varianta">
+                                    <input
+                                        type="radio"
+                                        id="q<%= indexIntrebare %>_v<%= indexVarianta %>"
+                                        name="raspuns_q<%= indexIntrebare %>"
+                                        value="<%= indexVarianta %>" <%# Trimitem INDEXUL variantei %>
+                                        required
+                                    >
+                                    <label for="q<%= indexIntrebare %>_v<%= indexVarianta %>"><%= variantaObiect.text %></label>
+                                </div>
+                            <% }); %>
+                        <% } else { %>
+                            <p><em>Această întrebare nu are variante.</em></p>
+                        <% } %>
+                    </fieldset>
+                <% }); %>
+
+                <button type="submit" class="submit-btn">Vezi Recomandarea</button> <%# Text buton actualizat %>
+            </form>
+        <% } else { %>
+            <p class="no-questions">Nu există întrebări disponibile pentru acest chestionar.</p>
+        <% } %>
+    </div>
+</body>
+</html>
