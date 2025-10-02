@@ -1,0 +1,154 @@
+  body {
+            background-image: url('/images/fundal_retro.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            color: #2c3e50; 
+            line-height: 1.6; 
+        }
+
+        .chestionar-wrapper {
+            background-color: rgba(255, 255, 255, 0.92); 
+            max-width: 800px;
+            margin: 40px auto; 
+            padding: 30px 40px; 
+            border-radius: 0px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.2em; 
+            margin-bottom: 15px; 
+            color: #333; 
+        }
+
+        p.intro { 
+            text-align: center;
+            font-size: 1.1em; 
+            margin-bottom: 35px; 
+            color: #555; 
+        }
+
+        .chestionar-form { 
+            margin-top: 20px;
+        }
+
+        fieldset.intrebare-bloc {
+            margin-bottom: 30px; 
+            padding: 20px 25px; 
+            border: 1px solid #e0e0e0; 
+            border-radius: 10px;
+            background-color: #ffffff;
+            border-left: 6px solid var(--culoare-accent-principal, #5cb85c); 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05); 
+        }
+
+        legend.intrebare-text {
+            font-weight: 600; 
+            font-size: 1.15em; 
+            margin-bottom: 15px;
+            padding: 0 5px; 
+            color: var(--culoare-text-accentuat, #333); 
+        }
+
+        .varianta {
+            margin-bottom: 12px; 
+            padding: 5px 0; 
+        }
+
+        .varianta input[type="radio"] {
+            margin-right: 10px;
+            cursor: pointer;
+            vertical-align: middle;
+            accent-color: var(--culoare-accent-principal, #5cb85c);
+        }
+
+       
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 14px 20px; 
+            font-size: 1.15em; 
+            font-weight: bold;
+            background-color: var(--culoare-accent-secundar, #5cb85c); 
+            color: var(--culoare-accent-text, white); 
+            border: none;
+            border-radius: 8px; 
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.1s ease;
+            margin-top: 30px;
+        }
+
+        .submit-btn:hover {
+             filter: brightness(90%); 
+             transform: translateY(-1px); 
+        }
+        .submit-btn:active {
+             transform: translateY(0px); 
+        }
+
+
+        .no-questions {
+            text-align: center;
+            color: #888;
+            font-style: italic;
+            font-size: 1.1em;
+            padding: 40px 0; 
+        }
+
+        :root {
+    --culoare-accent-principal: #D4AF37;
+    --culoare-accent-secundar: #f5d76e;
+    --culoare-accent-text: #1e1e1e;
+}
+
+h1 {
+    font-size: 2.4em;
+    color: var(--culoare-accent-principal);
+    letter-spacing: 0.5px;
+}
+
+.intrebare-text {
+    color: var(--culoare-accent-text);
+    font-weight: 600;
+    font-size: 1.2em;
+}
+
+.varianta label {
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.varianta input[type="radio"]:checked + label {
+    color: var(--culoare-accent-principal);
+    font-weight: 600;
+}
+
+.varianta:hover label {
+    color: var(--culoare-accent-secundar);
+    text-shadow: 0 0 4px rgba(212, 175, 55, 0.2);
+}
+
+.submit-btn {
+    background-color: var(--culoare-accent-principal);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 14px 24px;
+    font-size: 1.2em;
+    font-weight: 600;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: var(--culoare-accent-secundar);
+    color: #1e1e1e;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+}

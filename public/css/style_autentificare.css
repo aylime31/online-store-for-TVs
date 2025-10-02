@@ -1,0 +1,104 @@
+
+.pagina-autentificare-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: calc(100vh - 120px); 
+    padding: 80px 20px 40px 20px;
+    box-sizing: border-box;
+}
+
+.container-formular {
+    background-color: #1e1e1e; 
+    padding: 30px 35px;      
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 400px;     
+    text-align: center;
+    border: 1px solid rgba(212, 175, 55, 0.2); 
+}
+
+
+.mesaj-eroare { 
+    background-color: rgba(220, 53, 69, 0.15);
+    color: #ff9a9a;
+    border: 1px solid rgba(220, 53, 69, 0.4);
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    font-size: 0.9em;
+    text-align: left;
+}
+
+
+.container-formular form {
+    margin-top: 5px; 
+}
+
+.camp-formular {
+    margin-bottom: 18px; 
+    text-align: left;
+}
+
+.camp-formular label {
+    display: block;
+    margin-bottom: 7px;
+    color: #b0b0b0; 
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+.camp-formular input[type="text"],
+.camp-formular input[type="password"] {
+    width: 100%;
+    padding: 11px 14px; 
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 6px;
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    font-size: 1em;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.camp-formular input[type="text"]:focus,
+.camp-formular input[type="password"]:focus {
+    outline: none;
+    border-color: #D4AF37; 
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.15);
+}
+
+.buton-autentificare {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: #D4AF37; 
+    color: #121212; 
+    border: none;
+    border-radius: 6px;
+    font-size: 1.05em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    margin-top: 10px; 
+    box-shadow: 0 2px 5px rgba(212, 175, 55, 0.2);
+}
+
+.buton-autentificare:hover {
+    background-color: #c8a035; 
+    box-shadow: 0 3px 7px rgba(212, 175, 55, 0.3);
+}
+
+
+.link-inapoi {
+    display: block; 
+    margin-top: 25px;
+    color: #a0a0a0;
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: color 0.2s ease;
+}
+
+.link-inapoi:hover {
+    color: #D4AF37; 
+    text-decoration: underline;
+}

@@ -1,0 +1,60 @@
+.rezultat-container {
+    background-image: url('/images/fundal_retro.jpg'); 
+    text-align: center;
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+.scor-final {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #7e917e;
+    margin-bottom: 15px;
+}
+.rezultat-container p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+.mesaj-scor.recomandare {
+    background-color: #e2eafc;
+    border: 1px solid #aac3f2;
+    color: #2c3e50;
+    padding: 15px;
+    border-radius: 6px;
+    font-size: 1.2em;
+    text-align: left;
+    max-width: 700px;
+    margin: 0 auto 20px auto;
+}
+.mesaj-scor.recomandare ul {
+    text-align: left;
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.actiuni-rezultat {
+    margin-top: 30px;
+}
+.actiuni-rezultat a {
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+.btn-retry {
+    background-color: #bda37d;
+}
+.btn-retry:hover {
+    background-color: #bda37d;
+}
+.btn-home {
+    background-color: #8c6098;
+}
+.btn-home:hover {
+    background-color: #8c6098;
+}
