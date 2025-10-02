@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "utilizator": "admin",
+    "parola": "adminpass",
+    "nume": "Administrator Site",
+    "rol": "ADMIN"
+  },
+  {
+    "id": 2,
+    "utilizator": "client1",
+    "parola": "clientpass",
+    "nume": "Client Fidel",
+    "rol": "USER"
+  },
+  {
+    "id": 3,
+    "utilizator": "testuser",
+    "parola": "test123",
+    "nume": "Utilizator Test",
+    "rol": "USER"
+  }
+]

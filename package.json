@@ -1,0 +1,30 @@
+{
+  "name": "proiect-2-aylime31",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HDR-2024-2025/proiect-2-aylime31.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HDR-2024-2025/proiect-2-aylime31/issues"
+  },
+  "homepage": "https://github.com/HDR-2024-2025/proiect-2-aylime31#readme",
+  "description": "",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "cookie-parser": "^1.4.7",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-ejs-layouts": "^2.5.1",
+    "express-session": "^1.18.1",
+    "express-validator": "^7.2.1",
+    "mongodb": "^6.16.0",
+    "mongoose": "^8.15.0"
+  }
+}

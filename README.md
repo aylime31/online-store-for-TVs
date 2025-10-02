@@ -1,1 +1,1 @@
-# online-store-for-TVs
+Acest proiect este despre televizoare :) ==> Soon
